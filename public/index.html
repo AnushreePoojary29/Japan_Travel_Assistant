@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Travel Assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Background Carousel -->
+        <div class="bg-carousel">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1554797589-7241bb691973?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1492571350019-22de08371fd3?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=1920&q=80');"></div>
+        </div>
+
+        <!-- Main Content Carousel -->
+        <div class="content-carousel">
+            <!-- Panel 1: Text Translator -->
+            <div class="panel active">
+                <div class="translator-card">
+                    <h2><i class="fas fa-language"></i> Text Translator</h2>
+                    <div class="language-selector">
+                        <button id="swap-languages" class="swap-btn" title="Swap languages">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                        <div class="language-display">
+                            <span id="source-lang">Japanese</span>
+                            <i class="fas fa-arrow-right"></i>
+                            <span id="target-lang">English</span>
+                        </div>
+                    </div>
+                    <div class="text-areas">
+                        <textarea id="source-text" placeholder="Enter text here..."></textarea>
+                        <textarea id="translated-text" placeholder="Translation will appear here..." readonly></textarea>
+                    </div>
+                    <div class="controls">
+                        <button id="translate-btn"><i class="fas fa-exchange-alt"></i> Translate</button>
+                        <button id="clear-text-btn"><i class="fas fa-trash"></i> Clear</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel 2: Voice Translator -->
+            <div class="panel">
+                <div class="translator-card">
+                    <h2><i class="fas fa-microphone"></i> Voice Translator</h2>
+                    <div class="language-selector">
+                        <button id="swap-voice-languages" class="swap-btn" title="Swap languages">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                        <div class="language-display">
+                            <span id="voice-source-lang">Japanese</span>
+                            <i class="fas fa-arrow-right"></i>
+                            <span id="voice-target-lang">English</span>
+                        </div>
+                    </div>
+                    <div class="voice-section">
+                        <button id="start-listening" class="voice-btn">
+                            <i class="fas fa-microphone"></i> Start Speaking
+                        </button>
+                        <div id="voice-status" class="voice-status">Press button and speak</div>
+                        <div id="voice-transcript" class="voice-transcript"></div>
+                        <button id="voice-translate-btn" class="voice-btn" style="background: #3498db;">
+                            <i class="fas fa-exchange-alt"></i> Translate
+                        </button>
+                        <div id="voice-translation" class="voice-translation"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel 3: Popular Places -->
+            <div class="panel">
+                <div class="places-container">
+                    <h2><i class="fas fa-map-marked-alt"></i> Popular Places in Japan</h2>
+                    <div class="places-carousel">
+                        <div class="loading-spinner">
+                            <i class="fas fa-spinner fa-spin"></i> Loading places...
+                        </div>
+                    </div>
+                    <div class="places-nav">
+                        <button class="places-prev"><i class="fas fa-chevron-left"></i></button>
+                        <div class="places-dots"></div>
+                        <button class="places-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Navigation -->
+        <div class="carousel-nav">
+            <button class="nav-btn active" data-index="0"><i class="fas fa-language"></i></button>
+            <button class="nav-btn" data-index="1"><i class="fas fa-microphone"></i></button>
+            <button class="nav-btn" data-index="2"><i class="fas fa-map-marked-alt"></i></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
